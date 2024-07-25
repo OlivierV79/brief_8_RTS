@@ -6,5 +6,7 @@ public abstract class Batiments {
 
     private String nom;
 
+    private Integer resistance = 10;
+
 
 }

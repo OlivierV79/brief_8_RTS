@@ -107,7 +107,8 @@ public class Main {
         ((Eclaireur)eclaireur).partirExplorer();
         ((Eclaireur)eclaireur).rentrerDansMaison();
         ((Artisan)artisan1).produire();
-        ((Artisan)artisan1).ameliore();
+
+        ((Artisan)artisan1).ameliorerBatiment(ferme1);
 
 
 

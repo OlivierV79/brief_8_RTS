@@ -5,6 +5,8 @@ public abstract class Unite {
     private String type;
     private String nom;
 
+    private Integer pointDeVie = 10;
+
     public Unite(String nom) {
         this.type = nom;
     }

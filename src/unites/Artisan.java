@@ -1,5 +1,7 @@
 package unites;
 
+import batiments.Batiments;
+
 public class Artisan extends Unite{
     public Artisan(String nom) {
         super(nom);
@@ -11,8 +13,8 @@ public class Artisan extends Unite{
     }
 
     // ameliorer batiment dans un batiment
-    public void ameliore(){
-        System.out.println("L'artisan ameliore un batiment dans un batiment");
+    public void ameliorerBatiment(Batiments batiment){
+        System.out.println("L'artisan ameliore " + batiment);
     }
     //
 }

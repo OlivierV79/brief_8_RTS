@@ -9,16 +9,21 @@ classDiagram
         
     }
     
+    Village --> Unite
+    Village --> Batiment
+    Village --> Ressource
+    
         
     Unite <|-- Villageois
     Unite <|-- Soldat
     Unite <|-- Éclaireur
     Unite <|-- Chef
+    Unite <|-- Artisan
     
     class Unite{
+        - Type type
         - String nom
-        - Integer pointDeVie
-        + voguerDansLeVillage()
+        - Integer pointDeVie;
         }
             
      class Villageois{
@@ -43,6 +48,10 @@ classDiagram
          + donnerDuCourage()
          + sonnerAlerteGenerale()
          }
+         
+         class Artisan{
+             - ameliorerBatiment(Batiments batiment )
+         }
 
     Batiment <|-- Maison
     Batiment <|-- Caserne
@@ -50,13 +59,53 @@ classDiagram
     Batiment <|-- Atelier
     Batiment <|-- MurDeDefence
     
+    class Batiment{
+        - String type
+        - String nom
+        - Integer resistance
+    }
+    
+    class Maison{
+        + sertDeLieuDeRepos(Villageois villageois)
+    }
+    
+    class Caserne{
+        + formerSoldat(Unite unite)
+    }
+    
+    class Ferme{
+        + produireDeLaNouriture()
+    }
+    
+    class Atelier{
+        + produireOutil()
+        + produireArme()
+    }
+    
+    class MurDeDefence{
+        + protegerVillage()
+    }
+    
     Ressource <|-- Fer
     Ressource <|-- Bois
-    Ressource <|-- Nouriture
+    Ressource <|-- Nourriture
     Ressource <|-- Pierre
-    
+       
     class Ressource{
+        - Type type
         - String nom
+    }
+
+    class Fer{
+
+    }
+
+    class Bois{
+
+    }
+
+    class Nourriture{
+
     }
                 
                 
