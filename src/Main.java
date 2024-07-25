@@ -1,10 +1,6 @@
-import batiments.ListeBatimentChoix;
-import batiments.Maison;
+import batiments.*;
 import ressources.ListeRessourceChoix;
-import unites.ListeUniteChoix;
-import unites.Unite;
-import unites.UniteFactory;
-import unites.Villageois;
+import unites.*;
 import village.*;
 
 import java.util.List;
@@ -45,7 +41,7 @@ public class Main {
         Unite eclaireur = usineUnite.creerUnite(ListeUniteChoix.ECLAIREUR);
         eclaireur.setNom("Bibi");
 
-        // Unite soldat = usineUnite.creerUnite(ListeUniteChoix.SOLDAT);  - VIENDRA PLUTARD DANS LA CASERNE
+
 
         List<Unite> popu = paris.getPopulation();
         popu.add(villageois1);
@@ -83,15 +79,35 @@ public class Main {
 
 
         // CREATION DES BATIMENTS
-        ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.MAISON);
-        // AJOUTER LE BATIMENT A LA LISTE DES BATIMENTS !!! CONDITIONS DE RESSOURCES
+        Batiments maison1 = ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.MAISON);
+        Batiments atelier1 = ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.ATELIER);
+        Batiments caserne1 = ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.CASERNE);
+        Batiments ferme1 = ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.FERME);
+        Batiments murDeDefence1 = ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.MURDEDEFENSE);
 
-        ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.ATELIER);
-        ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.CASERNE);
-        ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.FERME);
-        ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.MURDEDEFENSE);
+        List<Batiments> bat = paris.getMobilierUrbain();
+        bat.add(maison1);
+        bat.add(atelier1);
+        bat.add(caserne1);
+        bat.add(ferme1);
+        bat.add(murDeDefence1);
+        paris.setMobilierUrbain(bat);
 
+        ((Maison) maison1).sertDeLieuDeRepos((Villageois) villageois1);
 
+        // Methodes mise en place avec des println sans arguments
+        ((Caserne) caserne1).formerSoldat(villageois2);
+        Unite soldat1 = usineUnite.creerUnite(ListeUniteChoix.SOLDAT);
+        ((Ferme)ferme1).produireDeLaNouriture();
+        ((Atelier)atelier1).produireArme();
+        ((Atelier)atelier1).produireOutil();
+        ((MurDeDefense)murDeDefence1).protegerVillage();
+        ((Soldat)soldat1).partirEnMission();
+        ((Soldat)soldat1).sePositioner();
+        ((Eclaireur)eclaireur).partirExplorer();
+        ((Eclaireur)eclaireur).rentrerDansMaison();
+        ((Artisan)artisan1).produire();
+        ((Artisan)artisan1).ameliore();
 
 
 

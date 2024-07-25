@@ -11,7 +11,7 @@ public class Village {
 
     private String nom;
     private List<Unite> population = new ArrayList<>();
-    private List<Batiments> mobilierUrbain;
+    private List<Batiments> mobilierUrbain  = new ArrayList<>();
     private Integer qBois = 0;
     private Integer qFer = 0;
     private Integer qNourriture = 0;
@@ -86,4 +86,6 @@ public class Village {
                 ", Pierre : " + getqPierre() );
         System.out.println(" ");
     }
+
+
 }

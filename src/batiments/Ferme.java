@@ -8,4 +8,8 @@ public class Ferme extends Batiments{
     public String toString() {
         return "ferme";
     }
+
+    public void produireDeLaNouriture(){
+        System.out.println("La ferme a produit de la nouriture");
+    }
 }

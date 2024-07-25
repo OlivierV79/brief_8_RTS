@@ -27,7 +27,7 @@ public class Villageois extends Unite {
         System.out.println(" ");
     }
 
-    public void creerBatiment(ListeBatimentChoix type) {
+    public Batiments creerBatiment(ListeBatimentChoix type) {
 
         BatimentFactory usineBatiment = new BatimentFactory();
         Batiments batiments1 = usineBatiment.creerBatiment(type);
@@ -35,6 +35,8 @@ public class Villageois extends Unite {
         System.out.println("Le villageois à créé le batiment : " + batiments1);
         this.voguerDansLeVillage();
         System.out.println(" ");
+
+        return batiments1;
     }
 
     @Override
