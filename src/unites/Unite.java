@@ -21,12 +21,6 @@ public abstract class Unite {
 
 
 
-    public void voguerDansLeVillage() {
-        System.out.println("Il vogue dans le village.");
-    }
-
-
-
     public String getNom() {
         return nom;
     }

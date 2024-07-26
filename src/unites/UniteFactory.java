@@ -1,6 +1,10 @@
 package unites;
 
 
+import village.Village;
+
+import java.util.List;
+
 public class UniteFactory {
 
     public Unite creerUnite(UniteChoix type){
@@ -12,6 +16,9 @@ public class UniteFactory {
             case ARTISAN: {
                 System.out.println("Un artisan est apparu.");
                 System.out.println(" ");
+
+
+
                 return new Artisan(type.toString());
             }
             case CHEF: {

@@ -87,5 +87,18 @@ public class Village {
         System.out.println(" ");
     }
 
+    public void commercerAvecMarchand(Ressource ressource){
+        System.out.println("Le village a fait du commerce avec le marchand itinerant, il a vendu : " + ressource);
+    }
+
+    public void EtatDesBiments(){
+
+        System.out.println("La resistance des batiments est :");
+
+        for (Batiments batiment : mobilierUrbain){
+            System.out.println(batiment.getNom() + " a une resistance de " + batiment.getResistance());
+        }
+    }
+
 
 }

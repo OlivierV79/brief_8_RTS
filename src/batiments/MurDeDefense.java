@@ -4,6 +4,8 @@ public class MurDeDefense extends Batiments{
 
     public MurDeDefense(String nom) {
         super();
+
+        this.setResistance(20);
     }
 
     public String toString() {

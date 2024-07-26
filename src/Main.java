@@ -1,5 +1,6 @@
 import batiments.*;
 import ressources.ListeRessourceChoix;
+import ressources.Ressource;
 import unites.*;
 import village.*;
 
@@ -62,16 +63,16 @@ public class Main {
         paris.detailsRessources();
 
 
-        ((Villageois) villageois1).collecterRessources(ListeRessourceChoix.BOIS);
+        Ressource bois1 = ((Villageois) villageois1).collecterRessources(ListeRessourceChoix.BOIS);
         paris.setqBois(paris.getqBois()+1);
 
-        ((Villageois) villageois1).collecterRessources(ListeRessourceChoix.FER);
+        Ressource fer1 = ((Villageois) villageois1).collecterRessources(ListeRessourceChoix.FER);
         paris.setqFer(paris.getqFer()+1);
 
-        ((Villageois) villageois1).collecterRessources(ListeRessourceChoix.PIERRE);
+        Ressource pierre1 = ((Villageois) villageois1).collecterRessources(ListeRessourceChoix.PIERRE);
         paris.setqPierre(paris.getqPierre()+1);
 
-        ((Villageois) villageois1).collecterRessources(ListeRessourceChoix.NOURRITURE);
+        Ressource nouriturre1 = ((Villageois) villageois1).collecterRessources(ListeRessourceChoix.NOURRITURE);
         paris.setqNourriture(paris.getqNourriture()+1);
 
 
@@ -80,10 +81,19 @@ public class Main {
 
         // CREATION DES BATIMENTS
         Batiments maison1 = ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.MAISON);
+        maison1.setNom("La maison de Oli");
+
         Batiments atelier1 = ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.ATELIER);
+        atelier1.setNom("L'atelier de Dédé");
+
         Batiments caserne1 = ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.CASERNE);
+        caserne1.setNom("La caserne des soulards");
+
         Batiments ferme1 = ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.FERME);
+        ferme1.setNom("La ferme de Momo");
+
         Batiments murDeDefence1 = ((Villageois) villageois1).creerBatiment(ListeBatimentChoix.MURDEDEFENSE);
+        murDeDefence1.setNom("Le grand mur Sud");
 
         List<Batiments> bat = paris.getMobilierUrbain();
         bat.add(maison1);
@@ -93,9 +103,9 @@ public class Main {
         bat.add(murDeDefence1);
         paris.setMobilierUrbain(bat);
 
-        ((Maison) maison1).sertDeLieuDeRepos((Villageois) villageois1);
 
-        // Methodes mise en place avec des println sans arguments
+
+        // Certaines methodes sont misent en place avec des println sans arguments
         ((Caserne) caserne1).formerSoldat(villageois2);
         Unite soldat1 = usineUnite.creerUnite(ListeUniteChoix.SOLDAT);
         ((Ferme)ferme1).produireDeLaNouriture();
@@ -103,22 +113,30 @@ public class Main {
         ((Atelier)atelier1).produireOutil();
         ((MurDeDefense)murDeDefence1).protegerVillage();
         ((Soldat)soldat1).partirEnMission();
-        ((Soldat)soldat1).sePositioner();
         ((Eclaireur)eclaireur).partirExplorer();
         ((Eclaireur)eclaireur).rentrerDansMaison();
         ((Artisan)artisan1).produire();
 
         ((Artisan)artisan1).ameliorerBatiment(ferme1);
+        ((Chef)chef).motiverUnite();
 
+        ((Villageois)villageois1).voguerDansLeVillage();
 
+        System.out.println(" ");
+        System.out.println("Ah !? Il y a un marchand aux portes du village !");
+        paris.commercerAvecMarchand(nouriturre1);
+        System.out.println(" ");
 
+        System.out.println("------------- ATTAQUE -------------");
+        System.out.println("Attention une attaque se prepare !");
+        ((Soldat)soldat1).sePositioner();
+        System.out.println(" ");
+        paris.EtatDesBiments();
+        System.out.println(" ");
+        ((Chef)chef).appliquerBuff(paris);
+        System.out.println(" ");
+        paris.EtatDesBiments();
+        System.out.println("-------------");
 
-
-
-
-
-
-
-        //Unite chef = usineUnite.creerUnite(ListeUniteChoix.CHEF);
     }
 }

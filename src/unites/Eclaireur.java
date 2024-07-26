@@ -1,6 +1,9 @@
 package unites;
 
 public class Eclaireur extends Unite{
+
+    private Integer capaciteExploration;
+
     public Eclaireur(String nom) {
         super(nom);
     }
