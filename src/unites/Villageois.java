@@ -13,8 +13,8 @@ import java.util.List;
 
 public class Villageois extends Unite implements SeReposer, Voguer {
 
-    private Integer capaciteRecolte;
-    private Integer capaciteConstruire;
+    private Integer capaciteRecolte = 1;
+    private Integer capaciteConstruire = 1;
 
     public Villageois(String nom) {
         super(nom);

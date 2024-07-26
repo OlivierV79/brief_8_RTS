@@ -5,6 +5,7 @@ classDiagram
     class Village{
         - List~Unite~ population
         - List~Batiment~ mobilierUrbain
+        - List~Equipement~ Entrepot
         - Integer qBois
         - Integer qFer
         - Integer qNourriture
@@ -18,6 +19,7 @@ classDiagram
     Village --> Unite
     Village --> Batiment
     Village --> Ressource
+    Village --> Equipement
     
         
     Unite <|-- Villageois
@@ -65,7 +67,7 @@ classDiagram
              - Integer capaciteProduction
              - Integer capaciteAmeliorationBatiment
              + ameliorerBatiment(Batiments batiment)
-             + produire()
+             + produire(Atelier atelier)
              + seReposer(Maison maison)
          }
 
@@ -141,6 +143,23 @@ classDiagram
 
     Artisan ..> Voguer
     Villageois ..> Voguer
+
+
+    Equipement <|-- Arme 
+    Equipement <|-- Outil 
+    
+    class Equipement{
+        <<abstract>>
+        - String nom
+    }
+    
+    class Arme{
+        
+    }
+    
+    class Outil{
+        
+    }
                 
                 
 

@@ -2,8 +2,8 @@ package unites;
 
 public class Soldat extends Unite{
 
-    private Integer capaciteAttaque;
-    private Integer capaciteDefense;
+    private Integer capaciteAttaque = 1;
+    private Integer capaciteDefense = 1;
 
     public Soldat(String nom) {
         super(nom);

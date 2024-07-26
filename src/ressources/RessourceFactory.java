@@ -14,7 +14,7 @@ public class RessourceFactory {
             case PIERRE: return new Pierre(type.toString());
 
         }
-        throw new IllegalArgumentException("Entrée incorrecte, Cette situation ne devrait pas se produire.");
+        throw new IllegalArgumentException("Entrée incorrecte, cette situation ne devrait pas se produire.");
 
     }
 

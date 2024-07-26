@@ -1,20 +1,21 @@
 package unites;
 
+import batiments.Atelier;
 import batiments.Batiments;
 import unites.interfaces.SeReposer;
 import unites.interfaces.Voguer;
 
 public class Artisan extends Unite implements SeReposer, Voguer {
 
-    private Integer capaciteProduction;
-    private Integer capaciteAmeliorationBatiment;
+    private Integer capaciteProduction = 1;
+    private Integer capaciteAmeliorationBatiment =1;
 
     public Artisan(String nom) {
         super(nom);
     }
 
     // produit des armes et des outils dans un atelier
-    public void produire(){
+    public void produire(Atelier atelier){
         System.out.println("L'artisan produit des armes et des outils dans un atelier");
     }
 

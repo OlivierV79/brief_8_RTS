@@ -7,6 +7,7 @@ public abstract class Unite {
 
     private Integer pointDeVie = 10;
 
+
     public Unite(String nom) {
         this.type = nom;
     }
@@ -18,8 +19,6 @@ public abstract class Unite {
     public void setType(String type) {
         this.type = type;
     }
-
-
 
     public String getNom() {
         return nom;

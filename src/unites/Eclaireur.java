@@ -2,7 +2,7 @@ package unites;
 
 public class Eclaireur extends Unite{
 
-    private Integer capaciteExploration;
+    private Integer capaciteExploration = 1;
 
     public Eclaireur(String nom) {
         super(nom);

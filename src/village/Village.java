@@ -1,6 +1,7 @@
 package village;
 
 import batiments.Batiments;
+import equipements.Equipement;
 import ressources.Ressource;
 import unites.Unite;
 
@@ -12,6 +13,7 @@ public class Village {
     private String nom;
     private List<Unite> population = new ArrayList<>();
     private List<Batiments> mobilierUrbain  = new ArrayList<>();
+    private List<Equipement> entrepot  = new ArrayList<>();
     private Integer qBois = 0;
     private Integer qFer = 0;
     private Integer qNourriture = 0;

@@ -115,7 +115,7 @@ public class Main {
         ((Soldat)soldat1).partirEnMission();
         ((Eclaireur)eclaireur).partirExplorer();
         ((Eclaireur)eclaireur).rentrerDansMaison();
-        ((Artisan)artisan1).produire();
+        ((Artisan)artisan1).produire((Atelier)atelier1);
 
         ((Artisan)artisan1).ameliorerBatiment(ferme1);
         ((Chef)chef).motiverUnite();
